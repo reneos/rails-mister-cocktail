@@ -8,12 +8,30 @@
     <title>RailsMisterCocktail</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
-    <%= yield %>
+    <nav id="top-bar" class="navbar navbar-light">
+      <div class="container">
+        <h1><%= link_to "Buzz Butler", cocktails_path, class: "navbar-brand" %></h1>
+        <!-- Button trigger modal -->
+        <!-- <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModalCenter">
+          Add new cocktail
+        </button> -->
+
+        <%= link_to "Add new cocktail", new_cocktail_path, class: "btn btn-outline-secondary" %>
+      </div>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+
+
   </body>
 </html>

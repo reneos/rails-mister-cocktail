@@ -1,0 +1,36 @@
+</div> <!-- close container -->
+
+<div class="jumbotron" id="show-page">
+  <div class="container">
+    <h1 id="cocktail-name">Search Results</h1>
+  </div>
+</div>
+
+<div class="container"> <!-- closes in template -->
+
+
+<div class="row">
+
+
+
+  <% @cocktails.each do |cocktail| %>
+    <div class="col-12 col-md-6 col-md-3 p-lg-5 p-3" data-aos="zoom-in-down">
+      <div class="drink-card w-100">
+
+        <div class="drink-card-img">
+          <% random_image = "cocktail_#{rand(1..7)}.jpg" %>
+          <%= image_tag random_image, alt: "Cocktail" %>
+        </div>
+
+
+        <div class="drink-card-title">
+            <h2><%= cocktail.name.titleize %></h2>
+        </div>
+      <%= link_to "", cocktail_path(cocktail), class: "drink-card-link"  %>
+      </div>
+    </div>
+
+
+  <% end %>
+
+</div>

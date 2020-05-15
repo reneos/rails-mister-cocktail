@@ -1,6 +1,5 @@
-.alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+.alert-info {
+  background-color: $baby-pink;
+  color: $gray;
+  border: 1px solid white;
 }

@@ -1,0 +1,28 @@
+.show-image {
+  width: 100%;
+  margin-bottom: 16px;
+  margin-top: -120px;
+  padding: 12px;
+  height: 400px;
+  object-fit: cover;
+  border: 1px solid $gray;
+}
+
+#cocktail-name {
+  font-size: 4em;
+}
+
+#show-page {
+  padding-bottom: 0;
+  .container h1 {
+    width: 50%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .show-image {
+    margin-top: 16px;
+  }
+}

@@ -1,1 +1,44 @@
-// Specific CSS for your home-page
+// Specific CSS for your home-pages
+
+.jumbotron {
+  background-image: $svg-pattern;
+}
+
+.main-page {
+  text-align: center;
+}
+
+#site-title {
+  font-size: 10em;
+  color: $gray;
+  background-color: $baby-pink;
+  text-align:center;
+  letter-spacing: -0.06em;
+}
+
+#site-subtitle {
+  font-family: $headers-font;
+  font-style: italic;
+  font-size: 2em;
+  padding: 8px 16px;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+  background-color: #e9ecef45;
+  top: -35px;
+}
+
+@include media-breakpoint-down(sm) {
+  #site-subtitle {
+    display: none;
+  }
+  #site-title {
+    text-align: left;
+    line-height: .8em;
+    padding: .1em;
+    border: 1px solid white;
+  }
+}
+
+

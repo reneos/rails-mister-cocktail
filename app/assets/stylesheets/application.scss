@@ -7,7 +7,17 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'select2/dist/css/select2';
+
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+
+// overall styling
+a:hover {
+  text-decoration: none;
+}
+

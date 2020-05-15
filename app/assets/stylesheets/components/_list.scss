@@ -1,0 +1,26 @@
+.ingredient-list {
+  padding: 0;
+  list-style: none;
+  li {
+    border-left: 3px solid #dcc0c0;
+    padding: 12px 8px;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  a {
+    color: $gray;
+    opacity: 0.2;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+
+.ingredient-list .material-icons {
+  display: flex;
+  align-items: center;
+}
