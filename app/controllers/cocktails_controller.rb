@@ -4,7 +4,9 @@ class CocktailsController < ApplicationController
   end
 
   def search
-
+    @query = params[:q]
+    @cocktails = Cocktail.where("name ILIKE ?", "%#{@query}%")
+    render :search
   end
 
   def new

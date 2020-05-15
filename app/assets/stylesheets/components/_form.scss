@@ -43,7 +43,18 @@
 }
 
 .select2-container--default .select2-results > .select2-results__options {
-  max-height: 300px; /* max height of the dropdown list */
+  max-height: 300px;
 }
 
+#search-form input[type="text"]{
+  width: 120px;
+    font-family: "Cormorant Garamond", "serif";
+    font-style: italic;
+    transition: 200ms;
+    background-color: #e4e4e4;
+    border: 1px solid #cecece;
+}
 
+#search-form input[type="submit"]{
+  display: none;
+}

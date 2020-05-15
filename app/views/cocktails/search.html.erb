@@ -2,7 +2,7 @@
 
 <div class="jumbotron" id="show-page">
   <div class="container">
-    <h1 id="cocktail-name">Search Results</h1>
+    <h1>Search Results</h1>
   </div>
 </div>
 
@@ -11,6 +11,12 @@
 
 <div class="row">
 
+  <% if @cocktails.empty? %>
+    <div class="alert alert-info w-100">
+      Sorry, there were no cocktails found the term <strong><%= params[:q] %></strong>!
+      <p class='mb-0'><small>Maybe you've already had too much to drink...?</small></p>
+    </div>
+  <% end %>
 
 
   <% @cocktails.each do |cocktail| %>
