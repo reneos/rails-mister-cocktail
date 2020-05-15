@@ -26,6 +26,7 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
     @ingredients = Ingredient.where.not(id: @cocktail.ingredients).order(name: :asc)
     @dose = Dose.new
+    @review = Review.new
   end
 
   private

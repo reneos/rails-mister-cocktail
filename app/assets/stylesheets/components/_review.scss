@@ -1,0 +1,15 @@
+#review-container {
+  background-color: darken($light-gray, 3%);
+  background-image: none;
+}
+
+.review {
+  padding: 8px 16px;
+  border-bottom: 1px dotted $gray;
+}
+
+.user {
+  font-weight: bold;
+}
+
+

@@ -48,6 +48,50 @@
     <% if @cocktail.photo.attached? %>
       <%= cl_image_tag @cocktail.photo.key, height: 500, width: 500, crop: :fill, class: "show-image" %>
     <% end %>
-
   </div>
 </div>
+
+</div> <!-- close container again -->
+
+<div class="jumbotron mt-md-5" id="review-container">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12 col-lg-8 mb-4">
+        <h2>Reviews</h2>
+        <% if @cocktail.reviews.empty? %>
+          <div class="alert alert-info">
+            There are currently no reviews for this cocktail, and that's sad.
+          </div>
+        <% end %>
+
+        <% @cocktail.reviews.each do |review| %>
+            <div class="review text-center">
+              <% stars = "<span class='material-icons'>star</span>" * review.rating  %>
+              <% no_stars = "<span class='material-icons'>star_outline</span>" * (5 - review.rating)  %>
+              <% username = review.username.nil? || review.username.empty? ? "Anonymous" : review.username %>
+              <div class="user mb-3 mt-3"><%= username %> says...</div>
+              <div class="content mb-3"><%= review.content %></div>
+              <div class="rating"><%= stars.html_safe %><%= no_stars.html_safe %></div>
+            </div>
+        <% end %>
+
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <h2>Add a review</h2>
+        <%= simple_form_for [@cocktail, @review] do |f| %>
+            <%= f.input :username, label: "Name (not required)" %>
+            <%= f.input :rating %>
+            <%= f.input :content %>
+            <%= f.submit "Submit review", class: "btn btn-outline-secondary" %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container"> <!-- open container again -->
+
