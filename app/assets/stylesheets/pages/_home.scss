@@ -29,6 +29,12 @@
   top: -35px;
 }
 
+.navbar-brand {
+  a {
+    color: inherit;
+  }
+}
+
 @include media-breakpoint-down(sm) {
   #site-subtitle {
     display: none;
@@ -38,6 +44,22 @@
     line-height: .8em;
     padding: .1em;
     border: 1px solid white;
+    font-size: 7em;
+  }
+}
+
+@include media-breakpoint-only(xs) {
+  .navbar-brand {
+    width: 100%;
+    text-align: center;
+  }
+  #top-bar .container>*{
+    width: 100%;
+    margin-bottom: 8px;
+    input {
+      width: 100%;
+      margin: 0;
+    }
   }
 }
 

@@ -37,8 +37,8 @@
     <h2 class="mt-4">Add an ingredient</h2>
     <%= simple_form_for [@cocktail, @dose] do |f| %>
         <%= f.association :ingredient, collection: @ingredients, input_html: { class: "select2" }, include_blank: false %>
-        <%= f.input :description %>
-        <%= f.submit "Add dose", class: "btn btn-outline-secondary" %>
+        <%= f.input :description, label: "How much?" %>
+        <%= f.submit "Add ingredient", class: "btn btn-outline-secondary" %>
     <% end %>
 
   </div>
@@ -82,7 +82,7 @@
         <h2>Add a review</h2>
         <%= simple_form_for [@cocktail, @review] do |f| %>
             <%= f.input :username, label: "Name (not required)" %>
-            <%= f.input :rating %>
+            <%= f.input :rating, input_html: { min: '0', max: '5' } %>
             <%= f.input :content %>
             <%= f.submit "Submit review", class: "btn btn-outline-secondary" %>
         <% end %>
