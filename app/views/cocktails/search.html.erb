@@ -24,8 +24,9 @@
       <div class="drink-card w-100">
 
         <div class="drink-card-img">
-          <% random_image = "cocktail_#{rand(1..7)}.jpg" %>
-          <%= image_tag random_image, alt: "Cocktail" %>
+          <% if cocktail.photo.attached? %>
+            <%= cl_image_tag cocktail.photo.key, height: 500, width: 500, crop: :fill %>
+          <% end %>
         </div>
 
 
