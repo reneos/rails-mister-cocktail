@@ -9,9 +9,11 @@ require("@rails/activestorage").start()
 require("channels")
 import 'bootstrap';
 import { initSelect2 } from '../components/init_select2';
+import { initFileUploadText } from '../components/initFileUploadText';
 
 document.addEventListener('turbolinks:load', () => {
   initSelect2();
+  initFileUploadText();
 });
 
   // Uncomment to copy all static images under ../images to the output folder and reference

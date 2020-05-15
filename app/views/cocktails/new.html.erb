@@ -8,7 +8,7 @@
   <div class="col">
     <%= simple_form_for(@cocktail) do |f| %>
       <%= f.input :name %>
-      <%= f.input :photo, as: :file, input_html: { class: "custom-upload" } %>
+      <%= f.input :photo, as: :file, label: "Upload a photo", input_html: { class: "custom-upload" }, label_html: { class: "btn btn-outline-secondary" } %>
       <%= f.submit class: "btn btn-outline-secondary" %>
     <% end %>
   </div>
