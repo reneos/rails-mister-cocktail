@@ -1,15 +1,28 @@
-<div class="row">
-  <div class="col">
+</div> <!-- close container -->
+
+<div class="jumbotron" id="show-page">
+  <div class="container">
     <h1>Create a new cocktail</h1>
   </div>
 </div>
 
+<div class="container"> <!-- closes in template -->
+
 <div class="row">
-  <div class="col">
+  <div class="col-12 col-md-6 mb-5">
     <%= simple_form_for(@cocktail) do |f| %>
       <%= f.input :name %>
       <%= f.input :photo, as: :file, label: "Upload a photo", input_html: { class: "custom-upload" }, label_html: { class: "btn btn-outline-secondary" } %>
       <%= f.submit class: "btn btn-outline-secondary" %>
     <% end %>
+  </div>
+  <div class="col-12 col-md-6">
+    <h2>Need some inspiration?</h2>
+    <p>Here are some incredible auto-generated names to help inspire you. I'm not responsible for the genius they provide.</p>
+    <ul>
+    <% @auto_names.each do |name| %>
+      <li><%= name.titleize %></li>
+    <% end %>
+    </ul>
   </div>
 </div>

@@ -11,10 +11,12 @@ class CocktailsController < ApplicationController
 
   def new
     @cocktail = Cocktail.new
+    @auto_names = make_inspiration
   end
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
+    @auto_names = make_inspiration
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
@@ -27,6 +29,16 @@ class CocktailsController < ApplicationController
     @ingredients = Ingredient.where.not(id: @cocktail.ingredients).order(name: :asc)
     @dose = Dose.new
     @review = Review.new
+  end
+
+  def make_inspiration
+    names = []
+    5.times do
+      adjective = [Faker::Color.color_name, Faker::Hipster.word].sample
+      noun = [Faker::House.room, Faker::Name.first_name, Faker::Space.moon, Faker::Artist.name].sample
+      names << "#{adjective} #{noun}"
+    end
+    names
   end
 
   private
